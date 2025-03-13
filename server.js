@@ -36,7 +36,6 @@ app.post("/login", async (req, res) => {
         return res.status(401).json({ error: "Usuário não encontrado" });
     }
 
-    console.log("Senha digitada:", password);
     console.log("Senha armazenada no banco:", user.password);
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
